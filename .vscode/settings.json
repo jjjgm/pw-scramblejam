@@ -1,3 +1,16 @@
 {
-    "editor.linkedEditing": true
+    "editor.linkedEditing": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "auto-rename-tag.activationOnLanguage": [
+        "html",
+        "css",
+        "php",
+        "js",
+        "jsx",
+        "javascriptreact",
+        "javascript",
+        "es6",
+        "java",
+        "*"
+    ]
 }
