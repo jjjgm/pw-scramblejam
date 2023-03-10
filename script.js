@@ -8,10 +8,18 @@ var letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 
 var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-var specialCharacter = []
+var specialCharacter =  ["!#$%&'()*+,-./:;<=>?@[\]^_`{|}~"]
+var specialChars = ["\U0020""\U0022", "\U0027",]
 
-/*
-for (var number) */
+let showChars = function (){ for ( let i =0; )}
+
+\\
+\"
+
+\'
+
+//*
+
 
 
 
