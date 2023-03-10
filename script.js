@@ -26,8 +26,12 @@ var generateBtn = document.querySelector("#generate");
 //ask user for choices
 function generatePassword() {
     var userChoices = [];
-    window.prompt("Choose a length of at least 8 characters and no more than 128 characters.")
 
+    var passwordLength= window.prompt("Choose a length of at least 8 characters and no more than 128 characters."); 
+    if (passwordLength < 8 || passwordLength > 128); {
+        alert("Your Password length must be between 8 and 128 characters");
+    }
+    
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
     if (includeNumbers === "yes") { userChoices = userChoices.concat(number); }
@@ -40,9 +44,12 @@ function generatePassword() {
         "Would you like to include Upper-Case-Letters in your password?");
     if (includeUpperCaseLetters === "yes") { userChoices.concat(upperCase) }
 
-    var password ="";
-    for (var i = 0; i; i++) {var randomPassword= Math.floor(Math.random() * userChoices.length);
-    password += userChoices[randomPassword];
+    else if (response === "no");
+
+    var password = "";
+    for (var i = 0; i < passwordLength; i++) {
+        var randomPassword = Math.floor(Math.random() * userChoices.length);
+        password += userChoices[randomPassword];
     }
 }
 
@@ -52,7 +59,8 @@ function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
 
-    passwordText.value = password; }
+    passwordText.value = password;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

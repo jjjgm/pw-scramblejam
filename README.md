@@ -14,9 +14,9 @@ Tutoring from Phillip Loy
 
 Class' Discord "Lounge" Study-Group
 
-Assistance from our class TA, Shawn
+Assistance was received from our class TA, Shawn on various occasions in post-class breakbout rooms.
 
-Joshua Dadbin, assited with code de-bugging with window.prompt to window. after 3/10 GitHub merge
+Joshua Dadbin, (class peer) assited with code de-bugging with window.prompt to window. after 3/10 GitHub merge
 
 
 ## Deploy Link
