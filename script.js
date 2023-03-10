@@ -23,51 +23,53 @@ var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+//ask user for choices
+function generatePassword() {
+    var userChoices = [];
+
+    var includeNumbers = window.prompt(
+        "Would you like to include numbers in your password? yes or no");
+    if (includeNumbers === "yes") { userChoices = userChoices.concat(number); }
+
+    var includeSpecialCharacters = window.prompt(
+        "Would you like to include special characters in your password? yes or no");
+    if (includeSpecialCharacters === "yes") { userChoices = userChoices.concat(specialCharacter); }
+
+    var includeUpperCaseLetters = window.prompt(
+        "Would you like to include Upper-Case-Letters in your password? yes or no");
+    if (includeUpperCaseLetters === "yes") { userChoices.concat(upperCase) }
+
+    var password ="";
+    for (var i = 0; i; i++) {var randomPassword= Math.floor(Math.random() * userChoices.length);
+    password += userChoices[randomPassword];
+    }
+}
+
+
+
+
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
 
-    passwordText.value = password;
-}
-
-//ask user for choices
-function generatePassword() {
-
-    window.prompt("Would you like to include numbers in your password?");
-
-    if (response === "yes") {
-        console.log("Would you like to include special characters in your password?");
-    }
-    if (response === "yes") {
-        console.log("Would you like to include Upper-Case-Letters in your password?");
-    }
-    //if yes code insert here when ready//
-    else if (response === "no");
-}
-
-console.log(function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
-    passwordText.value = password;
-})
-
-
-//take user choices and create password
-
-//push user choices to own array and/or own string
-//create password and randomize
-//remember math.floor and math.random equation
-//
-returnShufflePassword
-
+    passwordText.value = password; }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 
+//take user choices and create password
+//push user choices to own array and/or own string
+//create password and randomize
+//remember math.floor and math.random equation
+//returnShufflePassword
 
 
 
-
+/*console.log(function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+})
+*/
