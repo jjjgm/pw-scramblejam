@@ -15,10 +15,10 @@ var specialCharacter = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "
     ";", "<", "=", ">", "?", "@", "[", "^", "_", "|", "~"]
 
 //Random Item Selection
-var randomUpper = upperCase[Math.floor(Math.random()*upperCase.length)];
-var randomSpecial = specialCharacter[Math.floor(Math.random()*specialCharacter.length)];
-var randomNumber = number[Math.floor(Math.random()*number.length)];
-var randomLower = lowerCase[Math.floor(Math.random()*lowerCase.length)];
+var randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
+var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
+var randomNumber = number[Math.floor(Math.random() * number.length)];
+var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -29,28 +29,38 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
 }
 
+//ask user for choices
 function generatePassword() {
-    //ask user for choices
-window.prompt("Would you like to include numbers in your password?");
 
-let user = 
+    window.prompt("Would you like to include numbers in your password?");
 
-if (answer === "yes" ) { 
-    console.log("Would you like to include special characters in your password?");
-} //if yes code insert here when ready//
-else if (ans)
-
+    if (response === "yes") {
+        console.log("Would you like to include special characters in your password?");
+    }
+    if (response === "yes") {
+        console.log("Would you like to include Upper-Case-Letters in your password?");
+    }
+    //if yes code insert here when ready//
+    else if (response === "no");
 }
-    //take user choices and create password
 
-    //push user choices to own array and/or own string
-    //create password and randomize
-    //remember math.floor and math.random equation
-    //
-    returnShufflePassword
+console.log(function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+})
+
+
+//take user choices and create password
+
+//push user choices to own array and/or own string
+//create password and randomize
+//remember math.floor and math.random equation
+//
+returnShufflePassword
 
 
 // Add event listener to generate button
@@ -60,18 +70,4 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-/*
 
-let user = 
-switch (user) { 
-    case number: ("Yes", "Y", "yes");
-    break;
-    case specialCharacter: ("Yes", "Y", "yes");
-    break;
-    case lowerCase+upperCase: ("Yes", "Y", "yes");
-    break;
-    default: prompt.alert("I'm sorry that is not a valid response. Please enter 'Yes' or 'No' to proceed.")
-        //code to execute if user enters invalid response
-        break;
-} 
-*/
