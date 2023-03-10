@@ -16,6 +16,8 @@ Class' Discord "Lounge" Study-Group
 
 Assistance from our class TA, Shawn
 
+Joshua Dadbin, assited with code de-bugging with window.prompt to window. after 3/10 GitHub merge
+
 
 ## Deploy Link
 ["Deploy Link"](link here)

@@ -15,10 +15,10 @@ var specialCharacter = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "
     ";", "<", "=", ">", "?", "@", "[", "^", "_", "|", "~"]
 
 //Random Item Selection
-var randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
+/* var randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
 var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
 var randomNumber = number[Math.floor(Math.random() * number.length)];
-var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];
+var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];*/
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -26,17 +26,18 @@ var generateBtn = document.querySelector("#generate");
 //ask user for choices
 function generatePassword() {
     var userChoices = [];
+    window.prompt("Choose a length of at least 8 characters and no more than 128 characters.")
 
-    var includeNumbers = window.prompt(
-        "Would you like to include numbers in your password? yes or no");
+    var includeNumbers = window.confirm(
+        "Would you like to include numbers in your password?");
     if (includeNumbers === "yes") { userChoices = userChoices.concat(number); }
 
-    var includeSpecialCharacters = window.prompt(
-        "Would you like to include special characters in your password? yes or no");
+    var includeSpecialCharacters = window.confirm(
+        "Would you like to include special characters in your password?");
     if (includeSpecialCharacters === "yes") { userChoices = userChoices.concat(specialCharacter); }
 
-    var includeUpperCaseLetters = window.prompt(
-        "Would you like to include Upper-Case-Letters in your password? yes or no");
+    var includeUpperCaseLetters = window.confirm(
+        "Would you like to include Upper-Case-Letters in your password?");
     if (includeUpperCaseLetters === "yes") { userChoices.concat(upperCase) }
 
     var password ="";
