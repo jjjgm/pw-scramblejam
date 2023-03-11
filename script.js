@@ -1,7 +1,6 @@
 // Assignment code here
 
-// Arrays
-
+// ALL STRINGS, ARRAYS, AND \numbers\
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
     "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
@@ -13,10 +12,10 @@ var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 var specialCharacter = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":",
     ";", "<", "=", ">", "?", "@", "[", "^", "_", "|", "~"]
 
-// Get references to the #generate element
+// ACCESS GENERATE BUTTON IN HTML DOC TO BEGIN PW GENERATOR
 var generateBtn = document.querySelector("#generate");
 
-//ask user for choices
+// ASK USER FOR PW \length\ DESIRED BETWEEN 8-128 MAX CHAR.
 function generatePassword() {
     var passwordLength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters.");
     if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
@@ -25,7 +24,7 @@ function generatePassword() {
     }
     return shufflePassword(passwordLength);
 }
-// function for password
+// FUNCTION FOR PW TO BE GENERATED BASED OFF OF PREVIOUS \length\ AND 
 function shufflePassword(passwordLength) {
     var userChoices = [];
 
@@ -67,6 +66,7 @@ function shufflePassword(passwordLength) {
         shufflePassowrd(passwordLength);
     }
 
+// PW BEING RANDOMIZED BASED OFF OF ABOVE /prompt, confirm, & alert/ SELECTIONS
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
         var randomIndex = Math.floor(Math.random() * userChoices.length);
@@ -75,31 +75,13 @@ function shufflePassword(passwordLength) {
     return password;
 }
 
-// Write password to the #password input
+// FUNCTION THAT WILL POPULATE PW FROM RANDOMIZER AND MAKE /generatePassword:true/ A WORKING FUNCTION
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
 }
 
-//Add event listener to generate button
-
+// EVENT BEING ADDED THAT WILL /print/ PW INTO THE UI TEXTBOX THAT MEETS ALL USER CRITERIA
 generateBtn.addEventListener("click", writePassword);
 
-
-
-
-
-//take user choices and create password
-//push user choices to own array and/or own string
-//create password and randomize
-//remember math.floor and math.random equation
-//returnShufflePassword
-
-//Random Item Selection
-/* var randomUpper = upperCase[Math.floor(Math.random() * upperCase.length)];
-var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
-var randomNumber = number[Math.floor(Math.random() * number.length)];
-var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];*/
-//buttons.forEach(function(button)) {button.addEventListner("click", grabButtonData);})
-//* function clearChoices( userChoices ="";password ="";}function generatePassword ()

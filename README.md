@@ -2,6 +2,19 @@
 
 ## Description
 
+Given the following instructions provided in the starter code (and some added on my end), I began the main script.js skeleton.
+
+
+//STEPS:
+//Get references to the #generate element
+//take user choices and create password
+//push user choices to own array and/or own string
+//create password and randomize
+//remember math.floor and math.random equation
+//returnShufflePassword
+//Write password to the #password input
+//Add event listener to generate button
+
 
 
 
@@ -14,9 +27,9 @@ Tutoring from Phillip Loy
 
 Class' Discord "Lounge" Study-Group
 
-Assistance was received from our class TA, Shawn on various occasions in post-class breakbout rooms.
+Assistance was received from our class TA, Shawn on various occasions in post-class breakbout rooms, zoom session, and a debugging when my console would not load.
 
-Joshua Dadbin, (class peer) assited with code de-bugging with window.prompt to window. after 3/10 GitHub merge
+Joshua Dadbin, (class peer) assited with code de-bugging with window.prompt to window. after 3/10 GitHub merge.
 
 
 ## Deploy Link
