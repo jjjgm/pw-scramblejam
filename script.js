@@ -23,39 +23,50 @@ function generatePassword() {
         window.alert("Your Password length must be between 8 and 128 characters");
         generatePassword();
     }
-    shufflePassword(passwordLength);
+   return shufflePassword(passwordLength);
 }
 // function for password
 function shufflePassword(passwordLength) {
-    var userChoices = []; 
+    var userChoices = [];
 
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
-    if (includeNumbers) {
-        userChoices = userChoices.push(number);
+    if (includeNumbers) { number.forEach(function (num) {
+        userChoices.push(num);
+    });
+        //userChoices = userChoices.push(number);
     }
 
     var includeSpecialCharacters = window.confirm(
         "Would you like to include special characters in your password?");
     if (includeSpecialCharacters) {
-        userChoices = userChoices.push(specialCharacter);
+        specialCharacter.forEach(function (special) {
+            userChoices.push(special);
+        });
+        //userChoices = userChoices.push(specialCharacter);
     }
 
     var includeUpperCaseLetters = window.confirm(
         "Would you like to include UPPERCASELETTERS in your password?");
     if (includeUpperCaseLetters) {
-        userChoices = userChoices.push(upperCase);
+        specialCharacter.forEach(function (upper) {
+            userChoices.push(upper);
+        });
+        //userChoices = userChoices.push(upperCase);
     }
 
     var includeLowerCaseLetters = window.confirm(
         "Would you like to include lowercaseletters in your password?");
     if (includeLowerCaseLetters) {
-        userChoices = userChoices.push(lowerCase);
+        specialCharacter.forEach(function (lower) {
+            userChoices.push(lower);
+        });
+        //userChoices = userChoices.push(lowerCase);
     }
 
-    if (userChoices.length === 0) { 
-        alert ("Please make at least one valid selction"); 
-        return "";
+    if (userChoices.length === 0) {
+        alert("Please make at least one valid selction");
+        shufflePassowrd(passwordLength);
     }
 
     var password = "";
@@ -75,7 +86,7 @@ function writePassword() {
 
 //Add event listener to generate button
 
-generateBtn.addEventListener("click", writePassword); 
+generateBtn.addEventListener("click", writePassword);
 
 
 
