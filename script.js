@@ -23,7 +23,7 @@ function generatePassword() {
         window.alert("Your Password length must be between 8 and 128 characters");
         generatePassword();
     }
-   return shufflePassword(passwordLength);
+    return shufflePassword(passwordLength);
 }
 // function for password
 function shufflePassword(passwordLength) {
@@ -31,10 +31,10 @@ function shufflePassword(passwordLength) {
 
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
-    if (includeNumbers) { number.forEach(function (num) {
-        userChoices.push(num);
-    });
-        //userChoices = userChoices.push(number);
+    if (includeNumbers) {
+        number.forEach(function (num) {
+            userChoices.push(num);
+        });
     }
 
     var includeSpecialCharacters = window.confirm(
@@ -43,25 +43,23 @@ function shufflePassword(passwordLength) {
         specialCharacter.forEach(function (special) {
             userChoices.push(special);
         });
-        //userChoices = userChoices.push(specialCharacter);
     }
 
     var includeUpperCaseLetters = window.confirm(
         "Would you like to include UPPERCASELETTERS in your password?");
     if (includeUpperCaseLetters) {
-        specialCharacter.forEach(function (upper) {
+        upperCase.forEach(function (upper) {
             userChoices.push(upper);
-        });
-        //userChoices = userChoices.push(upperCase);
+        }
+        );
     }
 
     var includeLowerCaseLetters = window.confirm(
         "Would you like to include lowercaseletters in your password?");
     if (includeLowerCaseLetters) {
-        specialCharacter.forEach(function (lower) {
+        lowerCase.forEach(function (lower) {
             userChoices.push(lower);
         });
-        //userChoices = userChoices.push(lowerCase);
     }
 
     if (userChoices.length === 0) {
