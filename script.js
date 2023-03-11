@@ -18,62 +18,68 @@ var generateBtn = document.querySelector("#generate");
 
 //ask user for choices
 function generatePassword() {
-    var userChoices = [];
-
     var passwordLength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters.");
-    if (passwordLength < 8 || passwordLength > 128) {
+    if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
         window.alert("Your Password length must be between 8 and 128 characters");
-        return "";
-    } 
+        generatePassword();
+    } shufflePassword(passwordLength);
+}
 
-        var includeNumbers = window.confirm(
-            "Would you like to include numbers in your password?");
-        if (includeNumbers) {
-            userChoices = userChoices.concat(number);
-        }
+function shufflePassword (passwordLength) {
+    var userChoices = []; 
 
-        var includeSpecialCharacters = window.confirm(
-            "Would you like to include special characters in your password?");
-        if (includeSpecialCharacters) {
-            userChoices = userChoices.concat(specialCharacter);
-        }
+    var includeNumbers = window.confirm(
+        "Would you like to include numbers in your password?");
+    if (includeNumbers) {
+        userChoices += userChoices.concat(number);
+    }
 
-        var includeUpperCaseLetters = window.confirm(
-            "Would you like to include UPPERCASELETTERS in your password?");
-        if (includeUpperCaseLetters) {
-            userChoices = userChoices.concat(upperCase);
-        }
+    var includeSpecialCharacters = window.confirm(
+        "Would you like to include special characters in your password?");
+    if (includeSpecialCharacters) {
+        userChoices += userChoices.concat(specialCharacter);
+    }
+
+    var includeUpperCaseLetters = window.confirm(
+        "Would you like to include UPPERCASELETTERS in your password?");
+    if (includeUpperCaseLetters) {
+        userChoices += userChoices.concat(upperCase);
+    }
 
     var includeLowerCaseLetters = window.confirm(
         "Would you like to include lowercaseletters in your password?");
     if (includeLowerCaseLetters) {
-        userChoices = userChoices.concat(lowerCase);
+        userChoices += userChoices.concat(lowerCase);
     }
 
-        var password = "";
-        for (var i = 0; i < passwordLength; i++) {
-            var randomPassword = Math.floor(Math.random() * userChoices.length);
-            password += userChoices[randomPassword];
-        }
-        return password;
+    if (userChoices.length === 0) { 
+        alert ("Please make at least one valid selction");
     }
 
 
-    // Write password to the #password input
-    function writePassword() {
-        var password = generatePassword();
-        var passwordText = document.querySelector("#password");
-
-        passwordText.value = password;   
-    } 
-
-    //Add event listener to generate button
-    generateBtn.addEventListener("click", writePassword);
+    var password = "";
+    for (var i = 0; i < passwordLength; i++) {
+        var randomPassword = Math.floor(Math.random() * userChoices.length);
+        password += userChoices[randomPassword];
+    }
+    return password;
 
 
 
-/* no statement
-  else if (response === "no"); */
+// Write password to the #password input
+function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+
+    passwordText.value = password;
+}
+}
+
+//Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
+
 
 
 //take user choices and create password
@@ -88,4 +94,6 @@ var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter
 var randomNumber = number[Math.floor(Math.random() * number.length)];
 var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];*/
 
-//else {
+//buttons.forEach(function (button){button.addEventListner("click", grabButtonData)})
+//*function write password
+//*function clearChoices({  userChoices ="";password ="";}function generatePassword () {} *//
