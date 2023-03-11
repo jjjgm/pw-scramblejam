@@ -44,6 +44,11 @@ function generatePassword() {
             userChoices = userChoices.concat(upperCase);
         }
 
+    var includeLowerCaseLetters = window.confirm(
+        "Would you like to include lowercaseletters in your password?");
+    if (includeLowerCaseLetters) {
+        userChoices = userChoices.concat(lowerCase);
+    }
 
         var password = "";
         for (var i = 0; i < passwordLength; i++) {
