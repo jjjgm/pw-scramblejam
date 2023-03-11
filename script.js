@@ -24,7 +24,7 @@ function generatePassword() {
     }
     return shufflePassword(passwordLength);
 }
-// FUNCTION FOR PW TO BE GENERATED BASED OFF OF PREVIOUS \length\ AND 
+// FUNCTION FOR PW TO BE GENERATED BASED OFF OF PREVIOUS \length\ AND \confirm\ PROMPTS
 function shufflePassword(passwordLength) {
     var userChoices = [];
 
@@ -61,12 +61,13 @@ function shufflePassword(passwordLength) {
         });
     }
 
+//IF USER DOES NOT MAKE ANY VALID SELECTIONS, TO RULE OUT AN UNDEFINED  
     if (userChoices.length === 0) {
         alert("Please make at least one valid selction");
         shufflePassowrd(passwordLength);
     }
 
-// PW BEING RANDOMIZED BASED OFF OF ABOVE /prompt, confirm, & alert/ SELECTIONS
+// PW BEING RANDOMIZED BASED OFF OF ABOVE \prompt, confirm, & alert\ SELECTIONS
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
         var randomIndex = Math.floor(Math.random() * userChoices.length);
@@ -75,7 +76,7 @@ function shufflePassword(passwordLength) {
     return password;
 }
 
-// FUNCTION THAT WILL POPULATE PW FROM RANDOMIZER AND MAKE /generatePassword:true/ A WORKING FUNCTION
+// FUNCTION THAT WILL POPULATE PW FROM RANDOMIZER AND MAKE \generatePassword:true\ A WORKING FUNCTION
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
