@@ -13,5 +13,9 @@
         "java",
         "*"
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "editor.wordWrap": "on",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": false,
+    "editor.minimap.side": "right"
 }

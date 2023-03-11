@@ -27,31 +27,37 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
     var userChoices = [];
 
-    var passwordLength= window.prompt("Choose a length of at least 8 characters and no more than 128 characters."); 
+    var passwordLength = window.prompt("Choose a length of at least 8 characters and no more than 128 characters.");
     if (passwordLength < 8 || passwordLength > 128); {
         alert("Your Password length must be between 8 and 128 characters");
         return "";
     }
-    
+
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
-    if (includeNumbers === "yes") { userChoices = userChoices.concat(number); }
+    if (includeNumbers) {
+        userChoices = userChoices.concat(number);
+    }
 
     var includeSpecialCharacters = window.confirm(
         "Would you like to include special characters in your password?");
-    if (includeSpecialCharacters === "yes") { userChoices = userChoices.concat(specialCharacter); }
+    if (includeSpecialCharacters) {
+        userChoices = userChoices.concat(specialCharacter);
+    }
 
     var includeUpperCaseLetters = window.confirm(
         "Would you like to include Upper-Case-Letters in your password?");
-    if (includeUpperCaseLetters === "yes") { userChoices.concat(upperCase) }
+    if (includeUpperCaseLetters) {
+        userChoices.concat(upperCase);
+    }
 
-    else if (response === "no");
 
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
         var randomPassword = Math.floor(Math.random() * userChoices.length);
         password += userChoices[randomPassword];
     }
+    return password;
 }
 
 
