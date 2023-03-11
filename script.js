@@ -24,7 +24,7 @@ function generatePassword() {
     if (passwordLength < 8 || passwordLength > 128) {
         window.alert("Your Password length must be between 8 and 128 characters");
         return "";
-    } else {
+    } 
 
         var includeNumbers = window.confirm(
             "Would you like to include numbers in your password?");
@@ -59,12 +59,12 @@ function generatePassword() {
         var password = generatePassword();
         var passwordText = document.querySelector("#password");
 
-        passwordText.value = password;
-    }
+        passwordText.value = password;   
+    } 
 
     //Add event listener to generate button
     generateBtn.addEventListener("click", writePassword);
-}
+
 
 
 /* no statement
@@ -82,3 +82,5 @@ function generatePassword() {
 var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
 var randomNumber = number[Math.floor(Math.random() * number.length)];
 var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];*/
+
+//else {
