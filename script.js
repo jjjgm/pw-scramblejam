@@ -8,7 +8,7 @@ var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
     "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
 var specialCharacter = ["!", "#", "$", "%", "&", "(", ")", "*", "+", "-", ".", "/", ":",
     ";", "<", "=", ">", "?", "@", "[", "^", "_", "|", "~"]
@@ -22,36 +22,35 @@ function generatePassword() {
     if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
         window.alert("Your Password length must be between 8 and 128 characters");
         generatePassword();
-    } else {
-        return shufflePassword(passwordLength);
-}
+    }
+    shufflePassword(passwordLength);
 }
 // function for password
-function shufflePassword (passwordLength) {
+function shufflePassword(passwordLength) {
     var userChoices = []; 
 
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
     if (includeNumbers) {
-        userChoices = userChoices.concat(number);
+        userChoices = userChoices.push(number);
     }
 
     var includeSpecialCharacters = window.confirm(
         "Would you like to include special characters in your password?");
     if (includeSpecialCharacters) {
-        userChoices = userChoices.concat(specialCharacter);
+        userChoices = userChoices.push(specialCharacter);
     }
 
     var includeUpperCaseLetters = window.confirm(
         "Would you like to include UPPERCASELETTERS in your password?");
     if (includeUpperCaseLetters) {
-        userChoices = userChoices.concat(upperCase);
+        userChoices = userChoices.push(upperCase);
     }
 
     var includeLowerCaseLetters = window.confirm(
         "Would you like to include lowercaseletters in your password?");
     if (includeLowerCaseLetters) {
-        userChoices = userChoices.concat(lowerCase);
+        userChoices = userChoices.push(lowerCase);
     }
 
     if (userChoices.length === 0) { 
@@ -62,8 +61,9 @@ function shufflePassword (passwordLength) {
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
         var randomIndex = Math.floor(Math.random() * userChoices.length);
-        password = userChoices[randomIndex];
+        password += userChoices[randomIndex];
     }
+    return password;
 }
 
 // Write password to the #password input
@@ -75,7 +75,7 @@ function writePassword() {
 
 //Add event listener to generate button
 
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
 
 
 
@@ -92,7 +92,5 @@ generateBtn.addEventListener("click", writePassword);
 var randomSpecial = specialCharacter[Math.floor(Math.random() * specialCharacter.length)];
 var randomNumber = number[Math.floor(Math.random() * number.length)];
 var randomLower = lowerCase[Math.floor(Math.random() * lowerCase.length)];*/
-
-//buttons.forEach(function (button){button.addEventListner("click", grabButtonData)})
-//*function write password
-//*function clearChoices({  userChoices ="";password ="";}function generatePassword () {} *//
+//buttons.forEach(function(button)) {button.addEventListner("click", grabButtonData);})
+//* function clearChoices( userChoices ="";password ="";}function generatePassword ()
