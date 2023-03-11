@@ -39,7 +39,7 @@ function generatePassword() {
         }
 
         var includeUpperCaseLetters = window.confirm(
-            "Would you like to include Upper-Case-Letters in your password?");
+            "Would you like to include UPPERCASELETTERS in your password?");
         if (includeUpperCaseLetters) {
             userChoices = userChoices.concat(upperCase);
         }
