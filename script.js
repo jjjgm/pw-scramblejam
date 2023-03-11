@@ -22,60 +22,59 @@ function generatePassword() {
     if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
         window.alert("Your Password length must be between 8 and 128 characters");
         generatePassword();
-    } shufflePassword(passwordLength);
+    } else {
+        return shufflePassword(passwordLength);
 }
-
+}
+// function for password
 function shufflePassword (passwordLength) {
     var userChoices = []; 
 
     var includeNumbers = window.confirm(
         "Would you like to include numbers in your password?");
     if (includeNumbers) {
-        userChoices += userChoices.concat(number);
+        userChoices = userChoices.concat(number);
     }
 
     var includeSpecialCharacters = window.confirm(
         "Would you like to include special characters in your password?");
     if (includeSpecialCharacters) {
-        userChoices += userChoices.concat(specialCharacter);
+        userChoices = userChoices.concat(specialCharacter);
     }
 
     var includeUpperCaseLetters = window.confirm(
         "Would you like to include UPPERCASELETTERS in your password?");
     if (includeUpperCaseLetters) {
-        userChoices += userChoices.concat(upperCase);
+        userChoices = userChoices.concat(upperCase);
     }
 
     var includeLowerCaseLetters = window.confirm(
         "Would you like to include lowercaseletters in your password?");
     if (includeLowerCaseLetters) {
-        userChoices += userChoices.concat(lowerCase);
+        userChoices = userChoices.concat(lowerCase);
     }
 
     if (userChoices.length === 0) { 
-        alert ("Please make at least one valid selction");
+        alert ("Please make at least one valid selction"); 
+        return "";
     }
-
 
     var password = "";
     for (var i = 0; i < passwordLength; i++) {
-        var randomPassword = Math.floor(Math.random() * userChoices.length);
-        password += userChoices[randomPassword];
+        var randomIndex = Math.floor(Math.random() * userChoices.length);
+        password = userChoices[randomIndex];
     }
-    return password;
-
-
+}
 
 // Write password to the #password input
 function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
-}
 }
 
 //Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
 
 
