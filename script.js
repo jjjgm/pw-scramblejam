@@ -64,7 +64,7 @@ function shufflePassword(passwordLength) {
 //IF USER DOES NOT MAKE ANY VALID SELECTIONS, TO RULE OUT AN UNDEFINED  
     if (userChoices.length === 0) {
         alert("Please make at least one valid selction");
-        shufflePassowrd(passwordLength);
+        shufflePassword(passwordLength);
     }
 
 // PW BEING RANDOMIZED BASED OFF OF ABOVE \prompt, confirm, & alert\ SELECTIONS

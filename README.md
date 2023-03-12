@@ -76,7 +76,7 @@ Joshua Dadbin, (class peer) assisted with code de-bugging with window.prompt to 
 
 
 ## Deploy Link
-["Deploy Link"](link here)
+["https://jjjgm.github.io/pw-scramblejam/"](https://jjjgm.github.io/pw-scramblejam/)
 
 ## References
 ["Password Special Characters"](https://owasp.org/www-community/password-special-characters)
