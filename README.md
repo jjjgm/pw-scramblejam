@@ -47,11 +47,18 @@ provided in Module 3
 
 6. I added the prompt for the user to choose a password length betweent 8< || >128, and changed windows from being prompt windows to confirm windows.
 
-7. I ran the code.
+
+7. I ran the code
 
 ** My console was blank (in devTools),and I was not able to accpet all password modifications without getting: "undefined". My code would only generate a password if I disagreed to adding any modifications to the password generator. Another bug I encountered was I couldnt go back to the original prompt if my input values were not between 8-128 characters.
 
-8. 
+8. My code was refactored to include individualized functions for each modification, (as I had been using a variable within a variable). Once this was done, the console began displaying every "click".
+
+9. I added a call to shufflePassword, passwordLength. This function is responsible for computing the length&modifications made by the user.
+
+10. Lastly, I closed the function, generatePassword by making a function with the variable for the returned password at the end of shufflePassword & included generatePassword.
+
+11. Step 10 validated the eventListener for writing back the password the user wanted based off of all of their modifications.
 
 ## License
 MIT
