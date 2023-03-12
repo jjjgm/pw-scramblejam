@@ -79,15 +79,15 @@ Joshua Dadbin, (class peer) assisted with code de-bugging with window.prompt to 
 ["https://jjjgm.github.io/pw-scramblejam/"](https://jjjgm.github.io/pw-scramblejam/)
 
 ## References
-["Password Special Characters"](https://owasp.org/www-community/password-special-characters)
+[Password Special Characters](https://owasp.org/www-community/password-special-characters)
 
-["Stringing on Special Characters" - Video](https://youtu.be/PRmTHiwTvts)
+[Stringing on Special Characters - Video](https://youtu.be/PRmTHiwTvts)
 
-["Generate element"](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
+[Generate element"](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement)
 
-["Selecting Random Items from an Array"](https://css-tricks.com/snippets/javascript/select-random-item-array/)
+[Selecting Random Items from an Array](https://css-tricks.com/snippets/javascript/select-random-item-array/)
 
 
 ## Assets
 
-![alt](linkhere)
+![Deployed site displaying generated password](./assets/jjjgm.github.io_pw-scramblejam_.png) 
